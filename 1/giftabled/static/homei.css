@@ -1,0 +1,26 @@
+* {
+  font-family: Bungee;
+}
+
+.parallax {
+  background-image: url("https://d2j6dbq0eux0bg.cloudfront.net/images/34717072/1618960719.jpg");
+
+  min-height: 700px;
+
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media only screen and (max-width: 450px) {
+  .login_button {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 10px;
+  }
+  .parallax {
+    min-height: 500px;
+  }
+}
