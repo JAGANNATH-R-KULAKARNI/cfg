@@ -38,7 +38,13 @@
 }
 
 .impact_bro {
-  min-height: 10px !important;
+  min-height: 500px !important;
+  background-image: url("https://nunomarinhomusic.files.wordpress.com/2015/06/6-talent.jpg");
+
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .information_vro {
