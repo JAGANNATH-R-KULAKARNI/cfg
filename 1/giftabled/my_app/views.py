@@ -40,6 +40,18 @@ def signup_page(request):
         email=request.POST['email']
         password=request.POST['password']
         
+        if(User.objects.filter(username=username)):
+            messages.info(request,username+' already exists !')
+            return redirect('/signup')
+        
+        if(not username.isalnum()):
+            messages.info(request,'Username must be Alpha-Numberic !')
+            return redirect('/signup')
+        
+        if(User.objects.filter(email=email)):
+            messages.info(request,email+' already exists !')
+            return redirect('/signup')    
+        
         myuser=User.objects.create_user(username,email,password)
         myuser.save()
         messages.success(request,"Your Account has been successfully created")
