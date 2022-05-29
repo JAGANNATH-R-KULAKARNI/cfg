@@ -9,3 +9,7 @@ def index(request):
 
 def home_page(request):
     return render(request,'my_app/home2.html')
+
+
+def login_page(request):
+    return render(request,'my_app/login.html')

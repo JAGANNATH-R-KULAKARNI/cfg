@@ -8,7 +8,10 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-
+    <link
+      rel="canonical"
+      href="https://getbootstrap.com/docs/4.0/examples/sign-in/"
+    />
     <!-- Bootstrap CSS -->
     <link
       rel="stylesheet"
@@ -29,6 +32,7 @@
 
     <link rel="stylesheet" href="{% static 'homei.css/' %}" />
     <link rel="stylesheet" href="{% static 'footer.css/' %}" />
+    <link rel="stylesheet" href="{% static 'login.css/' %}" />
     <title>GiftAbled</title>
 
     <style></style>
@@ -134,190 +138,59 @@
         </form>
       </div>
     </nav>
-    <div class="parallax"></div>
-    <div
-      class="position-relative overflow-hidden p-3 p-md-1 m-md-10 text-center bg-light"
-      style="z-index: -1 !important"
-    >
-      <div class="col-md-5 p-lg-5 mx-auto my-5">
+    <div class="login_page_vro"></div>
+    <div class="text-center">
+      <form class="form-signin">
         <img
-          src="https://i0.wp.com/giftabled.org/wp-content/uploads/2019/05/fostering-inclusion-text-1024x263.png"
-          style="width: 100%; height: auto"
+          class="mb-4"
+          src="https://i0.wp.com/giftabled.org/wp-content/uploads/2019/08/GiftAbled-logo-HD-pin.png"
+          alt=""
+          width="72"
+          height="72"
         />
-        <p class="lead font-weight-normal">
-          Connecting like minded individuals - building an inclusive society,
-          together
-        </p>
-        <a class="btn btn-outline-secondary" href="#">Coming soon</a>
-      </div>
-      <div class="product-device box-shadow d-none d-md-block"></div>
-      <div
-        class="product-device product-device-2 box-shadow d-none d-md-block"
-      ></div>
-    </div>
-    <div class="container" style="min-width: 100%">
-      <div class="row nopaddingrow">
-        <div class="col nopadding nice">
-          <img
-            src="https://d2poqm5pskresc.cloudfront.net/wp-content/uploads/2019/10/People-and-Talent-Management.jpg"
-            style="width: 100%; height: auto"
-            class="colimageonly"
-          />
-        </div>
-
-        <div class="col nopadding">
-          <img
-            src="https://images.unsplash.com/photo-1576089235406-0612d7bb033e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=766&q=80"
-            style="width: 100%; height: auto"
-            class="colimageonly"
-          />
-        </div>
-
-        <div class="col nopadding">
-          <img
-            src="https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=847&q=80"
-            style="width: 100%; height: auto"
-            class="colimageonly"
-          />
-        </div>
-      </div>
-
-      <div class="row nopaddingrow">
-        <div class="col nopadding">
-          <img
-            src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvamVjdHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
-            style="width: 100%; height: auto"
-            class="colimageonly"
-          />
-        </div>
-        <div class="col nopadding">
-          <img
-            src="https://images.unsplash.com/photo-1508700929628-666bc8bd84ea?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8dGFsZW50fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
-            style="width: 100%; height: auto"
-            class="colimageonly"
-          />
-        </div>
-        <div class="col nopadding">
-          <img
-            src="https://images.unsplash.com/photo-1607083681678-52733140f93a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8Z2lmdGluZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
-            style="width: 100%; height: auto"
-            class="colimageonly"
-          />
-        </div>
-      </div>
-      <div class="row nopaddingrow">
-        <div class="col nopadding">
-          <img
-            src="https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YXVkaXR8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
-            style="width: 100%; height: auto"
-            class="colimageonly"
-          />
-        </div>
-        <div class="col nopadding">
-          <img
-            src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZW52aXJvbm1lbnR8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
-            style="width: 100%; height: auto"
-            class="colimageonly"
-          />
-        </div>
-        <div class="col nopadding">
-          <img
-            src="https://images.unsplash.com/photo-1533745848184-3db07256e163?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fHNpZ24lMjBsYW5ndWFnZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
-            style="width: 100%; height: auto"
-            class="colimageonly"
-          />
-        </div>
-      </div>
-    </div>
-    <br />
-    {% comment %}
-    <div class="impact_bro"></div>
-    {% endcomment %}
-    <div>
-      <div class="container" style="min-width: 100%">
-        <h1 style="text-align: center; font-weight: 900">Impact So Far</h1>
+        <h1 class="h3 mb-3 font-weight-normal">Login</h1>
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input
+          type="email"
+          id="inputEmail"
+          class="form-control"
+          placeholder="Email address"
+          required
+          autofocus
+          style="background-color: white !important; color: black !important"
+        />
         <br />
-        <div class="row">
-          <div class="col">
-            <img
-              src="https://i0.wp.com/giftabled.org/wp-content/uploads/2019/10/beneficiaries-2.png"
-              style="width: 100%; height: auto"
-            />
-          </div>
-          <div class="col">
-            <img
-              src="https://i0.wp.com/giftabled.org/wp-content/uploads/2019/10/participants-2.png"
-              style="width: 100%; height: auto"
-            />
-          </div>
-          <div class="col">
-            <img
-              src="https://i0.wp.com/giftabled.org/wp-content/uploads/2019/10/volunteers-2.png"
-              style="width: 100%; height: auto"
-            />
-          </div>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input
+          type="password"
+          id="inputPassword"
+          class="form-control"
+          placeholder="Password"
+          required
+          style="background-color: white !important; color: black !important"
+        />
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            value=""
+            id="defaultCheck1"
+          />
+          <label class="form-check-label" for="defaultCheck1">
+            I accept Terms and Conditions
+          </label>
         </div>
-      </div>
-    </div>
-    <br />
-    <div class="information_vro" style="width: 100%">
-      <div
-        class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3"
-        style="width: 100% !important; display: flex; justify-content: center"
-      >
-        <div
-          class="bg-dark mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden"
-          style="width: 50%; background-color: black !important"
+        <br />
+        <button
+          class="btn btn-lg btn-primary btn-block"
+          type="submit"
+          style="background-color: black !important"
         >
-          <div class="my-3 py-3">
-            <h1 class="display-5" style="font-weight: 900">2013</h1>
-            <p class="lead" style="font-weight: 700">+15000 beneficiaries</p>
-          </div>
-          <div
-            class="bg-light box-shadow mx-auto"
-            style="width: 80%; height: auto; border-radius: 20px"
-          >
-            <img
-              src="https://i0.wp.com/giftabled.org/wp-content/uploads/2019/08/wall-of-hope-hp-banner.jpg"
-              style="width: 100%; height: auto; border-radius: 20px"
-            />
-          </div>
-          <br />
-          <br />
-        </div>
-        <div
-          class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden"
-          style="width: 50%"
-        >
-          <div class="my-3 p-3">
-            <h1
-              class="display-5"
-              style="font-weight: 900"
-              style="color: black !important"
-            >
-              2025
-            </h1>
-            <p
-              class="lead"
-              style="font-weight: 700"
-              style="color: black !important"
-            >
-              +1000000 beneficiaries
-            </p>
-          </div>
-          <div
-            class="bg-light box-shadow mx-auto"
-            style="width: 80%; height: auto; border-radius: 20px"
-          >
-            <img
-              src="https://i0.wp.com/giftabled.org/wp-content/uploads/2020/10/girl-cntribute.jpg"
-              style="width: 100%; height: auto; border-radius: 20px"
-            />
-          </div>
-        </div>
-      </div>
+          Sign in
+        </button>
+        <p class="mt-5 mb-3 text-muted">&copy; Gitabled.com</p>
+      </form>
     </div>
-    <br />
     <footer class="footer-section">
       <div class="container">
         <div class="footer-cta pt-5 pb-5">
