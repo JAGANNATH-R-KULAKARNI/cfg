@@ -53,7 +53,15 @@
       integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
       crossorigin="anonymous"
     ></script>
-    <script></script>
+    <script>
+      $(window).on("load", function () {
+        $("#basicModal").modal("show");
+      });
+
+      function closeModal() {
+        $("#basicModal").modal("toggle");
+      }
+    </script>
     <nav
       class="navbar navbar-expand-lg navbar-dark bg-dark"
       style="
@@ -130,8 +138,8 @@
           />
           <div class="login_button">
             <button class="btn btn-outline-success my-2 my-sm-0">
-              <a href="login" style="text-decoration: none; color: inherit">
-                Login
+              <a href="signup" style="text-decoration: none; color: inherit">
+                Sign Up
               </a>
             </button>
           </div>
@@ -140,7 +148,8 @@
     </nav>
     <div class="login_page_vro"></div>
     <div class="text-center">
-      <form class="form-signin">
+      <form class="form-signin" action="/login" method="post">
+        {% csrf_token %}
         <img
           class="mb-4"
           src="https://i0.wp.com/giftabled.org/wp-content/uploads/2019/08/GiftAbled-logo-HD-pin.png"
@@ -149,34 +158,67 @@
           height="72"
         />
         <h1 class="h3 mb-3 font-weight-normal">Login</h1>
-        <label for="inputEmail" class="sr-only">Email address</label>
+        {% if messages %} {% for message in messages %}
+        <div
+          class="modal fade"
+          id="basicModal"
+          tabindex="-1"
+          role="dialog"
+          aria-labelledby="basicModal"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-body">
+                <div
+                  class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}"
+                  role="alert"
+                >
+                  {{ message }}
+                </div>
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  onclick="closeModal();"
+                >
+                  Ok
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %} {% endif %}
+        <label for="inputuser" class="sr-only">User Name</label>
         <input
-          type="email"
-          id="inputEmail"
+          type="name"
+          id="inputuser"
+          name="username"
           class="form-control"
-          placeholder="Email address"
+          placeholder="User Name"
           required
           autofocus
           style="background-color: white !important; color: black !important"
         />
-        <br />
-        <label for="inputPassword" class="sr-only">Password</label>
+
+        <label for="inputpassword" class="sr-only">Password</label>
         <input
           type="password"
-          id="inputPassword"
+          id="inputpassword"
+          name="password"
           class="form-control"
           placeholder="Password"
           required
           style="background-color: white !important; color: black !important"
         />
-        <div class="form-check">
+        <div class="form-check" style="justify-content: left">
           <input
             class="form-check-input"
             type="checkbox"
             value=""
-            id="defaultCheck1"
+            name="terms"
+            id="checkboxtac"
           />
-          <label class="form-check-label" for="defaultCheck1">
+          <label class="form-check-label" for="checkboxtac">
             I accept Terms and Conditions
           </label>
         </div>
@@ -186,7 +228,7 @@
           type="submit"
           style="background-color: black !important"
         >
-          Sign in
+          Sign In
         </button>
         <p class="mt-5 mb-3 text-muted">&copy; Gitabled.com</p>
       </form>
