@@ -148,7 +148,7 @@
     </nav>
     <div class="login_page_vro"></div>
     <div class="text-center">
-      <form class="form-signin" action="/forgot" method="post">
+      <form class="form-signin" action="/send_email" method="post">
         {% csrf_token %}
         <img
           class="mb-4"
@@ -157,7 +157,7 @@
           width="72"
           height="72"
         />
-        <h1 class="h3 mb-3 font-weight-normal">Reset Password</h1>
+        <h1 class="h3 mb-3 font-weight-normal">Send email</h1>
         {% if messages %} {% for message in messages %}
         <div
           class="modal fade"
@@ -206,7 +206,7 @@
           type="submit"
           style="background-color: black !important"
         >
-          Send Me Magic Link
+          Send Me Email
         </button>
         <p class="mt-5 mb-3 text-muted">&copy; Gitabled.com</p>
       </form>

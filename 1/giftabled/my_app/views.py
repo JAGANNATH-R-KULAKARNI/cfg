@@ -75,16 +75,19 @@ def forgot_password(request):
     
     if(request.method == 'POST'):
         email=request.POST['email']
+        print(email)
+        send_mail('New Email', 'Hello Jagannath, email from django app', 'jagannathrkulakarni.171845@gmail.com', [email], fail_silently=False)
+        messages.success(request,'Mail has been sent to '+email)
+        return redirect('/send_email')
+        # if(not User.objects.filter(email=email).first()):
+        #     messages.info(request,'User with email '+email+' not found')
+        #     return redirect('/forgot')
+        # else:
+        #     send_mail('New Email', 'Hello Jagannath, email from django app', 'jagannathrkulakarni.171845@gmail.com', ['4ni19is038_b@nie.ac.in'], fail_silently=False)
+        #     messages.success(request,'Link has been sent to '+email)
+        #     return redirect('/forgot')
         
-        if(not User.objects.filter(email=email).first()):
-            messages.info(request,'User with email '+email+' not found')
-            return redirect('/forgot')
-        else:
-            send_mail('New Email', 'Hello Jagannath, email from django app', 'jagannathrkulakarni.171845@gmail.com', ['4ni19is038_b@nie.ac.in'], fail_silently=False)
-            messages.success(request,'Link has been sent to '+email)
-            return redirect('/forgot')
-        
-    return render(request,'my_app/forgotpasswd.html')
+    return render(request,'my_app/send_email.html')
 
 
 
