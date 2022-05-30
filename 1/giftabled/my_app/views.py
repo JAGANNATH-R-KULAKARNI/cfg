@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate,login,logout
+from django.core.mail import send_mail
 
 # Create your views here.
 
@@ -28,7 +29,7 @@ def login_page(request):
             messages.success(request,msg)
             return redirect('/')
         else:
-            messages.info(request,"Credentials Invalid")    
+            messages.info(request,"Invalid Credentials")    
             return redirect('/login')
     
     return render(request,'my_app/login.html')
@@ -69,4 +70,24 @@ def log_out(request):
     messages.success(request,"Succesfully logged out")
     
     return redirect('/login')
+
+def forgot_password(request):
+    
+    if(request.method == 'POST'):
+        email=request.POST['email']
+        
+        if(not User.objects.filter(email=email).first()):
+            messages.info(request,'User with email '+email+' not found')
+            return redirect('/forgot')
+        else:
+            send_mail('New Email', 'Hello Jagannath, email from django app', 'jagannathrkulakarni.171845@gmail.com', ['4ni19is038_b@nie.ac.in'], fail_silently=False)
+            messages.success(request,'Link has been sent to '+email)
+            return redirect('/forgot')
+        
+    return render(request,'my_app/forgotpasswd.html')
+
+
+
+def change_password(request):
+    return render(request,'my_app/changepasswd.html')
     

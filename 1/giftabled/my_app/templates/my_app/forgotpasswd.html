@@ -138,8 +138,8 @@
           />
           <div class="login_button">
             <button class="btn btn-outline-success my-2 my-sm-0">
-              <a href="signup" style="text-decoration: none; color: inherit">
-                Sign Up
+              <a href="login" style="text-decoration: none; color: inherit">
+                Login
               </a>
             </button>
           </div>
@@ -148,7 +148,7 @@
     </nav>
     <div class="login_page_vro"></div>
     <div class="text-center">
-      <form class="form-signin" action="/login" method="post">
+      <form class="form-signin" action="/forgot" method="post">
         {% csrf_token %}
         <img
           class="mb-4"
@@ -157,7 +157,7 @@
           width="72"
           height="72"
         />
-        <h1 class="h3 mb-3 font-weight-normal">Login</h1>
+        <h1 class="h3 mb-3 font-weight-normal">Reset Password</h1>
         {% if messages %} {% for message in messages %}
         <div
           class="modal fade"
@@ -188,26 +188,15 @@
           </div>
         </div>
         {% endfor %} {% endif %}
-        <label for="inputuser" class="sr-only">User Name</label>
+        <label for="inputuser" class="sr-only">Email</label>
         <input
-          type="name"
-          id="inputuser"
-          name="username"
+          type="email"
+          id="inputemail"
+          name="email"
           class="form-control"
-          placeholder="User Name"
+          placeholder="Email"
           required
           autofocus
-          style="background-color: white !important; color: black !important"
-        />
-
-        <label for="inputpassword" class="sr-only">Password</label>
-        <input
-          type="password"
-          id="inputpassword"
-          name="password"
-          class="form-control"
-          placeholder="Password"
-          required
           style="background-color: white !important; color: black !important"
         />
 
@@ -217,9 +206,8 @@
           type="submit"
           style="background-color: black !important"
         >
-          Sign In
+          Send Me Magic Link
         </button>
-
         <p class="mt-5 mb-3 text-muted">&copy; Gitabled.com</p>
       </form>
     </div>

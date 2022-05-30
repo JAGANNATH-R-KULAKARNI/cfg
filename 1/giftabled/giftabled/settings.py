@@ -128,3 +128,12 @@ STATICFILES_DIRS=[
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+SENDGRID_API_KEY = os.getenv('SENDGRID_API_KEY')
+
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_HOST_USER = 'apikey' 
+EMAIL_HOST_PASSWORD = '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'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
